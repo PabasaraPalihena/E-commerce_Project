@@ -2,6 +2,7 @@ import type { InferGetServerSidePropsType } from "next"
 // import getAllProducts from "@/framework/shopify/product/get-all-products"
 import getAllProducts from "framework/shopify/product/get-all-products"
 import { getConfig } from "@framework/api/config"
+import { Layout } from "@components/common"
 
 export async function getStaticProps(){
   const config = getConfig()
@@ -23,3 +24,5 @@ export default function Home({products}:InferGetServerSidePropsType<typeof getSt
       </div>
   )
 }
+
+Home.Layout = Layout

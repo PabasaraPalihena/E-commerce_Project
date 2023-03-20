@@ -1,10 +1,11 @@
+
 import { FC } from "react"
 
-interface LayoutProps {
-  children?: React.ReactNode
-}
+interface Props {
+    children: React.ReactNode;
+  }
 
-const Layout: FC<LayoutProps> = ({children}) => {
+const Layout: FC<Props> = ({ children })  => {
   return (
     <div className="layout">
       { children }
@@ -13,4 +14,3 @@ const Layout: FC<LayoutProps> = ({children}) => {
 }
 
 export default Layout
-
