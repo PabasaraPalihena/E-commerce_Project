@@ -1,8 +1,8 @@
 import type { InferGetServerSidePropsType } from "next"
-import getAllPoducts from "@/framework/shopify/product/get-all-products"
+import getAllProducts from "@/framework/shopify/product/get-all-products"
 
 export async function getStaticProps(){
-  const products = await getAllPoducts()
+  const products = await getAllProducts()
 
   return{
     props:{
@@ -14,9 +14,11 @@ export async function getStaticProps(){
 
 export default function Home({products}:InferGetServerSidePropsType<typeof getStaticProps>) {
 
+  getAllProducts()
+
   return (
       <div>
-        {products}
+      { JSON.stringify(products) }
       </div>
   )
 }
