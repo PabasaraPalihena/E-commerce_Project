@@ -15,8 +15,6 @@ export async function getStaticProps(){
 
 export default function Home({products}:InferGetServerSidePropsType<typeof getStaticProps>) {
 
-  getAllProducts()
-
   return (
       <div>
       { JSON.stringify(products) }
