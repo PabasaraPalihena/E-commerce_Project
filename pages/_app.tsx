@@ -1,22 +1,35 @@
 import { AppProps } from "next/app"
 import { Layout } from "@components/common"
-import { FC } from "react"
+import React,{ FC } from "react"
+import "@assets/main.css"
 
 interface Props {
     children: React.ReactNode;
   }
   
 const Noop: FC<Props> = ({children}) => <>{children}</>
-function MyApp({Component, pageProps}: AppProps & {Component: {Layout: FC<Props>}}) {
-  const Layout = Component.Layout ?? Noop
 
-function MyApp({Component, pageProps}: AppProps) {
+  function MyApp({ Component, pageProps }: AppProps & { Component: { Layout?: FC } }) {
+  const LayoutComponent = Component.Layout ?? Layout;
+
   return (
-    <Layout>
+    <LayoutComponent>
       <Component {...pageProps} />
-    </Layout>
-  )
+    </LayoutComponent>
+  );
 }
-}
+
 
 export default MyApp
+
+// import { AppProps } from "next/app"
+
+// function MyApp({Component, pageProps}: AppProps) {
+//   return (
+//     <>
+//       <Component {...pageProps} />
+//     </>
+//   )
+// }
+
+// export default MyApp

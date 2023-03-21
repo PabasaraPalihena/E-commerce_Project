@@ -1,5 +1,4 @@
 import type { InferGetServerSidePropsType } from "next"
-// import getAllProducts from "@/framework/shopify/product/get-all-products"
 import getAllProducts from "framework/shopify/product/get-all-products"
 import { getConfig } from "@framework/api/config"
 import { Layout } from "@components/common"
