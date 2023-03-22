@@ -6,14 +6,17 @@ import s from "./ProductCard.module.css"
 
 interface Props {
   product: Product
+  variant?: "simple" | "slim"
 }
 
 const placeholderImage = "/product-image-placeholder.svg"
-const ProductCard: FC<Props> = ({product}) => {
+const ProductCard: FC<Props> = ({product, variant = "simple"}) => {
 
   return (
     <Link href={`/products/${product.slug}`} className={s.root}>
-      {/* <a className={s.root}> */}
+      { variant === "slim" ?
+          <>SLIM PRODUCT</> : (
+          <>
       <div className={s.productBg}></div>
         <div className={s.productTag}>
           <h3 className={s.productTitle}>
@@ -35,7 +38,9 @@ const ProductCard: FC<Props> = ({product}) => {
           />
         )
         }
-        {/* </a> */}
+        </>
+          )
+        }
     </Link>
   )
 }

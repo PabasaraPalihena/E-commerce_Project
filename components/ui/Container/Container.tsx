@@ -1,9 +1,9 @@
-import { ReactNode, FC } from "react";
+import { ReactNode, FC,ComponentType, HTMLAttributes } from "react";
 
 
 interface Props {
   children: ReactNode | ReactNode[]
-  el?: any
+  el?: ComponentType<HTMLAttributes<HTMLElement>>
 }
 
 

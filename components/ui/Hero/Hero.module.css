@@ -1,6 +1,5 @@
 .root {
-    @apply grid grid-cols-1 py-32;
-  
+    @apply grid grid-cols-1 py-32 justify-center;
     /* @screen md {
       @apply grid-cols-2;
     } */
@@ -21,5 +20,5 @@
   }
   
   .link  {
-    @apply text-white pt-3 font-bold hover:underline cursor-pointer;
+    @apply block text-white pt-3 font-bold hover:underline cursor-pointer;
   }
