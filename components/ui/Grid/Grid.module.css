@@ -4,7 +4,8 @@
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-  }
+  } 
+  
 
   & > * {
     @apply row-span-1 overflow-hidden;
@@ -15,9 +16,9 @@
     }
   }
 }
+
+
 .layoutA {
-  /* 1, 7, 13 */
-  /* 5, 11, 17 */
   & > *:nth-child(6n + 1),
   & > *:nth-child(6n + 5) {
 
@@ -27,7 +28,6 @@
     }
   }
 }
-
 
 .layoutB {
   color: blue;
