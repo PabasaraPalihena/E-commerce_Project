@@ -7,7 +7,7 @@ export type ApiFetcherOptions = {
   export type ApiFetcherResults<T> = {
     data: T
   }
-  export type Variables = {[key: string]: string}
+  export type Variables = {[key: string]: string | undefined}
   
   export interface ApiConfig {
     apiUrl: string
