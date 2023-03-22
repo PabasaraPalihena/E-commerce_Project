@@ -1,12 +1,13 @@
 export type ApiFetcherOptions = {
     url: string
     query: string
-    variables?: any
+    variables?: Variables
   }
   
   export type ApiFetcherResults<T> = {
     data: T
   }
+  export type Variables = {[key: string]: string}
   
   export interface ApiConfig {
     apiUrl: string
