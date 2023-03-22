@@ -1,6 +1,9 @@
 import { Layout } from "@components/common"
 import { getConfig } from "@framework/api/config"
-import getAllProductsPaths from "@framework/product/get-all-products-paths"
+import {
+    getAllProductsPaths,
+    getProduct
+  } from "@framework/product"
 import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "next"
 
 
@@ -8,7 +11,7 @@ import { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from "
 export const getStaticPaths: GetStaticPaths = async () => {
 
     const config = getConfig()
-  const { products } = await getAllProductsPaths(config)
+    const { products } = await getAllProductsPaths(config)
   return {
     paths: products.map(p => ({params: {slug: p.slug}})),
     fallback: false
@@ -19,11 +22,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps = async ({
   params }: GetStaticPropsContext<{slug: string}>
 ) => {
+    const config = getConfig()
+    const { product } = await getProduct(config)
+
   return {
     props: {
-      product: {
-        slug: params?.slug
-      }
+      product
     }
   }
 }
@@ -33,7 +37,8 @@ export default function ProductSlug({
 ) {
   return (
     <div>
-      {product.slug}
+        {product.name}
+        {product.slug}
     </div>
   )
 }
