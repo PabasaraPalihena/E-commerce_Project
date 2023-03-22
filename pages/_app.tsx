@@ -1,7 +1,7 @@
 import { AppProps } from "next/app"
 import { Layout } from "@components/common"
 import React,{ FC } from "react"
-import { UIProvider, useUI } from "@components/ui/context"
+import { UIProvider } from "@components/ui/context"
 import "@assets/main.css"
 
 interface Props {
