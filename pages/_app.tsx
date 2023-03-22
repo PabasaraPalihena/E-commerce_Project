@@ -1,6 +1,7 @@
 import { AppProps } from "next/app"
 import { Layout } from "@components/common"
 import React,{ FC } from "react"
+import { UIProvider, useUI } from "@components/ui/context"
 import "@assets/main.css"
 
 interface Props {
@@ -13,9 +14,11 @@ const Noop: FC<Props> = ({children}) => <>{children}</>
   const LayoutComponent = Component.Layout ?? Layout;
 
   return (
+    <UIProvider>
     <LayoutComponent>
       <Component {...pageProps} />
     </LayoutComponent>
+    </UIProvider>
   );
 }
 

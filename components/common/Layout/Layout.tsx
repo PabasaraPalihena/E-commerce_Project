@@ -4,12 +4,16 @@ import s from "./Layout.module.css"
 import { Footer,Navbar } from "@components/common"
 import { Sidebar } from "@components/ui"
 import { CartSidebar } from "@components/cart"
+import { useUI } from "@components/ui/context"
 
 interface Props {
     children: React.ReactNode;
   }
 
 const Layout: FC<Props> = ({ children })  => {
+  const ui = useUI()
+  console.log(ui)
+
   return (
     <div className={s.root}>
        <Navbar />
