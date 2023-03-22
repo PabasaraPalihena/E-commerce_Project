@@ -28,7 +28,7 @@ const ProductCard: FC<Props> = ({product}) => {
             height={540}
             width={900}
             quality="85"
-            className={s.productImg}
+            className={s.productImage}
             layout="relative"
           />
         )
