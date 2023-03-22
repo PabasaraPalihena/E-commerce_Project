@@ -1,12 +1,22 @@
 import { ReactNode, FC, useRef, useEffect } from "react"
 import s from "./Marquee.module.css"
+import cn from "classnames"
 
 interface Props {
   children: ReactNode[]
+  variant?: "primary" | "secondary"
   direction?: "left" | "right"
 }
 
-const Marquee: FC<Props> = ({ children, direction = "left" }) => {
+const Marquee: FC<Props> = ({ children, direction = "left", variant = "primary" }) => {
+
+  const rootClassName = cn(
+    s.root,
+    {
+      [s.secondary]: variant === "secondary"
+    }
+  )
+
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -31,7 +41,7 @@ const Marquee: FC<Props> = ({ children, direction = "left" }) => {
   }, [direction])
 
   return (
-    <div className={s.root}>
+    <div className={rootClassName}>
       <div className={s.container} ref={containerRef}>
         {children}
       </div>
