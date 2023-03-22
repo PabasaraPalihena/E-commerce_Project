@@ -24,6 +24,11 @@
       "@assets/*": ["assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "framework/shopify/utils/queries/get-productsts"
+  ],
   "exclude": ["node_modules"]
 }
