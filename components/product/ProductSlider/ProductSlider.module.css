@@ -19,17 +19,17 @@
   }
   
   .leftControl {
-    @apply bg-cover left-10;
-    background-image: url('D:\\Citro\\ecommerce-project\\public\\cursor-left.png');
+    @apply bg-cover left-12;
+    background-image: url('/cursor-left.png');
   
     @screen md {
-      @apply left-6;
+      @apply left-10;
     }
   }
   
   .rightControl {
     @apply bg-cover right-10;
-    background-image: url('D:\\Citro\\ecommerce-project\\public\\cursor-right.png');
+    background-image: url('/cursor-right.png');
   
     @screen md {
       @apply right-6;
