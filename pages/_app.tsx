@@ -3,6 +3,7 @@ import { Layout } from "@components/common"
 import React,{ FC } from "react"
 import { UIProvider } from "@components/ui/context"
 import "@assets/main.css"
+import 'keen-slider/keen-slider.min.css'
 
 interface Props {
     children: React.ReactNode;
