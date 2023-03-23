@@ -28,16 +28,18 @@ const ProductView: FC<Props> = ({ product }) => {
             </div>
           </div>
           <ProductSlider>
-            <div className={s.imageContainer}>
+            {product.images.map(image => 
+            <div key={image.url} className={s.imageContainer}>
                 <Image
                 className={s.img}
-                src={"/product-image-placeholder.svg"}
+                src={image.url}
                 alt={'Product Image'}
                 width={1050}
                 height={1050}
                 quality="85"
                 />
             </div>
+            )}
           </ProductSlider>
         </div>
         <div className={s.sidebar}>
