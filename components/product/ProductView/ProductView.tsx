@@ -18,6 +18,7 @@ const ProductView: FC<Props> = ({ product }) => {
 
   const [ choices, setChoices ] = useState<Choices>({})
   const api = ApiProvider()
+  debugger
   const { openSidebar } = useUI()
   const addItem = useAddItem()
   const variant = getVariant(product, choices)
