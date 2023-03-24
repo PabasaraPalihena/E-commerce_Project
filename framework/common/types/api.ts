@@ -15,3 +15,9 @@ export type ApiFetcherOptions = {
       options: ApiFetcherOptions
     ): Promise<ApiFetcherResults<T>>
   }
+
+  export interface ApiHooks {
+    cart: {
+      useAddItem: any
+    }
+  }
