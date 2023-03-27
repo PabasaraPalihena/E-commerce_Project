@@ -14,7 +14,7 @@ export const handler = {
   }: any) {
 
     let checkout
-
+    debugger
     if (checkoutId) {
         const { data } = await fetch({
           ...options
