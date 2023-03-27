@@ -6,7 +6,7 @@ export type ApiFetcherOptions = {
   export type ApiFetcherResults<T> = {
     data: T
   }
-  export type Variables = {[key: string]: string | undefined}
+  export type Variables = {[key: string]: string |  any | undefined}
   
   export interface ApiConfig {
     fetch<T>(options: ApiFetcherOptions): Promise<ApiFetcherResults<T>>
