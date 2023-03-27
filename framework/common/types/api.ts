@@ -15,6 +15,7 @@ export type ApiFetcherOptions = {
   export interface ApiHooks {
     cart: {
       useAddItem: any
+      useCart: any
     }
   }
 
