@@ -1,18 +1,28 @@
 import useCart from "@common/cart/use-cart"
+import { Cart } from "@common/types/cart"
+import { SWRHook } from "@common/types/hooks"
 import { checkoutToCart,createCheckout,getCheckoutQuery } from "@framework/utils"
 import { useMemo } from "react"
 
+export type UseCartHookDescriptor = {
+  fetcherInput: {
+    checkoutId: string
+  }
+  fetcherOutput: any
+  data: Cart
+}
+
 export default useCart
 
-export const handler = {
-  fetchOptions: {
+export const handler: SWRHook<UseCartHookDescriptor> = {
+  fetcherOptions: {
     query: getCheckoutQuery
   },
   async fetcher({
     fetch,
     options,
     input: { checkoutId }
-  }: any) {
+  }) {
 
     let checkout
    
