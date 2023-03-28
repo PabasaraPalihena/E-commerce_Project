@@ -32,9 +32,12 @@ export const handler = {
       return checkout
   },
   useHook: ({useData}: any) => {
-    const data = useData()
+    const data = useData({
+      swrOptions: {
+        revalidateOnFocus: false
+      }
+    })
     return useMemo(() => {
-      debugger
       return data
     }, [data])
   }
