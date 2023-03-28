@@ -64,7 +64,7 @@ export interface ApiHooks {
      context: {
       useData: UseData<SWRResponse<H["data"], any>>
     }
-  ): SWRResponse<H["data"], any>
+    ): () => SWRResponse<H["data"], any>
   }
   
   export type Hook = MutationHook | SWRHook
