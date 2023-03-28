@@ -39,5 +39,5 @@ export type MutationHookContext<Input, Output> = {
   >
     useHook(
       context: MutationHookContext<H["fetcherInput"], H["data"]>
-  ): (input: H["fetcherInput"]) => Promise<H["data"]>
+      ): () => (input: H["fetcherInput"]) => Promise<H["data"]>
   }
