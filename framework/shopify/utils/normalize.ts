@@ -10,9 +10,22 @@ import {
 
   import { Product } from "../../common/types/product"
 
-  export const normalizeCart = (checkout: Checkout): any => {
-    return checkout
+  import { Cart } from "@common/types/cart"
+
+export const normalizeCart = (checkout: Checkout): Cart => {
+  return {
+    id: checkout.id,
+    createdAt: checkout.createdAt,
+    currency: {
+      code: checkout.totalPriceV2.currencyCode
+    },
+    taxesIncluded: checkout.taxesIncluded,
+    lineItemsSubtotalPrice: +checkout.subtotalPriceV2.amount,
+    totalPrice: checkout.totalPriceV2.amount,
+    lineItems: checkout.lineItems.edges.map(lineItemEdge => lineItemEdge.node),
+    discounts: []
   }
+}
   
   const normalizeProductImages = ({edges}: {edges: Array<ImageEdge>}) =>
     edges.map(({node: { originalSrc: url, ...rest}}) => ({
